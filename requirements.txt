@@ -1,0 +1,6 @@
+pandas
+ipykernel
+matplotlib
+statsmodels
+pmdarima
+skikit-learn
