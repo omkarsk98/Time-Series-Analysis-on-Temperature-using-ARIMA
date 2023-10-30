@@ -39,6 +39,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -214,6 +227,19 @@ df.head()
 
 
 <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -465,6 +491,16 @@ testData.plot(figsize=(12,5))
 Woah Woah. Stephan said that this data would flatten out mathematically and it happens so. But, our actual forcast should not flatten out. Forecasting constant values will not add any value.   
 Fortunately, I could reach out to Stephan and he suggest me other models that can be implemented and have better performance. A lot more to implment and learn from. 
 
+
+```python
+# compute the mean squared error across models
+from sklearn.metrics import mean_squared_error
+mseDict = {}
+for col in testData.columns[1:]:
+    mseDict[col] = mean_squared_error(testData['AverageTemperature'], testData[col])
+mseDict
+```
+
 Concluding this one here.
 - ARIMA is a benchmark model but it is practically tough to identify the optimal order. 
 - Our forcast will flatten out and this is not what we want.
@@ -484,5 +520,5 @@ Concluding this one here.
     [NbConvertApp] Making directory README_files
     [NbConvertApp] Making directory README_files
     [NbConvertApp] Making directory README_files
-    [NbConvertApp] Writing 16232 bytes to README.md
+    [NbConvertApp] Writing 16744 bytes to README.md
 
